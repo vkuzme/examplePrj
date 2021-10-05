@@ -1,0 +1,46 @@
+{
+  "classes": [
+    "com.grouping.ExTest"
+  ],
+  "methods": [
+    "testFetchData"
+  ],
+  "enabled": true,
+  "groups": [
+    "test1"
+  ],
+  "dataSets": [
+    {
+      "description": "test No enabled and NO groups",
+      "payload": {
+        "type": "logo"
+      },
+      "status": 200
+    },
+    {
+      "description": "test enabled false",
+      "enabled": false,
+      "groups": [
+        "func"
+      ],
+      "payload": {
+        "type": "video"
+      },
+      "status": 400
+    },
+    {
+      "description": "test includedGroups [smoke] and excludeGroups [gr1, prod]",
+      "groups": [
+        "smoke"
+      ],
+      "excludeGroups": [
+        "gr1",
+        "prod"
+      ],
+      "payload": {
+        "type": "document"
+      },
+      "status": 200
+    }
+  ]
+}

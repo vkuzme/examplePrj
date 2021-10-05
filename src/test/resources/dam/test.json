@@ -1,0 +1,109 @@
+{
+  "groups": [
+    "default",
+    "smoke"
+  ],
+  "excludeGroups": [
+    "video",
+    "prod"
+  ],
+  "classes": [
+    "com.grouping.TestGr"
+  ],
+  "methods": [
+    "test2"
+  ],
+  "dataSets": [
+    {
+      "description": "test No enabled and groups",
+      "payload": {
+        "type": "logo"
+      },
+      "status": 200
+    },
+    {
+      "description": "test enabled false",
+      "enabled": false,
+      "groups": [
+        "func"
+      ],
+      "payload": {
+        "type": "video",
+        "ownerType": "enterprise"
+      },
+      "status": 400
+    },
+    {
+      "description": "test includedGroups [smoke] and excludeGroups [gr1, prod]",
+      "groups": [
+        "smoke"
+      ],
+      "excludeGroups": [
+        "gr1",
+        "prod"
+      ],
+      "payload": {
+        "type": "document"
+      },
+      "status": 200
+    },
+    {
+      "description": "test enabled=true and includedGroups [func, smoke, gr1, gr2]",
+      "groups": [
+        "func",
+        "smoke",
+        "gr1",
+        "gr2"
+      ],
+      "payload": {
+        "type": "image",
+        "ownerType": "enterprise"
+      },
+      "status": 200
+    },
+    {
+      "description": "test enabled=false",
+      "enabled": false,
+      "groups": [
+        "smoke",
+        "func"
+      ],
+      "excludeGroups": [
+        "prod"
+      ],
+      "payload": {
+        "type": "logo"
+      },
+      "status": 200
+    },
+    {
+      "description": "test includedGroups [func, rrrsd]",
+      "groups": [
+        "rrrsd",
+        "func"
+      ],
+      "payload": {
+        "type": "invalid",
+        "ownerType": "user"
+      },
+      "status": 400,
+      "errorMessage": ""
+    },
+    {
+      "description": "test excludeGroups [Smoke,Gr1] & includedGroups [func]",
+      "groups": [
+        "func"
+      ],
+      "excludeGroups": [
+        "gr1",
+        "smoke"
+      ],
+      "payload": {
+        "type": "invalid"
+      },
+      "status": 400,
+      "errorMessage": ""
+    }
+  ]
+}
+
