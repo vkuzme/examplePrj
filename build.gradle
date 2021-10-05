@@ -12,9 +12,6 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven {
-        url "https://nexus.corp.bluejeans.com/nexus/content/groups/public"
-    }
 }
 
 dependencies {

@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 
 public class TestGr {
 
-  private ThreadLocal<String> testName = new ThreadLocal<>();
   static Integer i = 2;
 
   @DataSupplier
